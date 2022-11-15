@@ -1,0 +1,27 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block content%}
+<br><br>
+
+<div class="centered">
+
+<h3>Delete The Offer : {{job.title}}
+    <span class=" centered ">
+
+    <!-- Create a Form -->
+
+    <form action="{% url 'delete-offer' job.id%}" method="POST">
+        <!-- Security token by Django -->
+        {% csrf_token %}
+        <br/>
+
+        <a href="{% url 'home-user' %}">Cancel </a>
+        <input type="submit" name="Confirm" value="Confirm">    
+    </span>
+    
+</div>
+
+{% include 'website/footer.html'%}
+{% endblock %}
+

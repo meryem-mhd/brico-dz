@@ -1,0 +1,59 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+        <!-- Header End -->
+        <div class="container-xxl py-5 bg-dark page-header">
+            <div class="container my-5 pt-5 pb-4">
+                <h1 class="display-3 text-white mb-3 animated slideInDown">Jobs </h1>
+                 
+                   
+            </div>
+        </div>
+        <!-- Header End -->
+
+
+        <!-- Category Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <h1 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">Profiles</h1>
+                <div class="row g-4">
+                    {% for personal_experience in all_category_personal_erxperience %}
+
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <a class="cat-item rounded p-4" href=" {% url 'users_personal_experience' personal_experience.id%}">
+                            <!--all painters-->
+                            {{personal_experience}}
+                            <h6 class="mb-3">{{personal_experience.main_job}}</h6>
+                            <p class="mb-0"></p>    
+                        </a>
+                    </div>
+
+                    {% endfor %}
+
+                    
+                    
+                    
+                 
+        <!-- Category End -->
+        {% include 'website/footer.html'%}
+
+
+       
+
+        
+
+    <!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</html>
+<script src="{% static 'website/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'website/lib/wow/wow.min.js' %}"></script>
+<script src="{% static 'website/lib/easing/easing.min.js' %}"></script>
+<script src="{% static 'website/lib/waypoints/waypoints.min.js' %}"></script>
+<script src="{% static 'website/lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+<!-- Template Javascript -->
+<script src="{% static 'website/js/main.js' %}"></script>
+{% endblock%}

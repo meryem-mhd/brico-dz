@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  bricodz:
+    container_name: bricodz
+    build: .
+    command: bash -c "python manage.py runserver 0:5000"
+    restart: always
+    volumes:
+      - ./app:/home/app
+      - /var/run/docker.sock:/var/run/docker.sock
+    stdin_open: true
+    ports:
+      - "0.0.0.0:5001:5000"
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    networks:
+      - bricodz-network
+networks:
+  default:
+    driver: bridge
+  bricodz-network:
+    external: true

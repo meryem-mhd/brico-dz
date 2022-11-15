@@ -1,0 +1,35 @@
+version: "3"
+services:
+  db:
+    container_name: POSTGRES_DB-bricodz
+    image: postgres:alpine
+    #command: postgres -c stats_temp_directory=/tmp
+    restart: always
+    volumes:
+      - ./data/db-bricodz:/var/lib/postgresql/data-bricodz
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    ports:
+      - "5432:5432"
+    networks:
+      - bricodz-network
+  pgadmin:
+    container_name: pgadmin4_bricodz
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+    ports:
+      - "5050:80"
+    networks:
+      - bricodz-network
+networks:
+  default:
+    driver: bridge
+  bricodz-network:
+    external: true
+volumes:
+  postgres: {}

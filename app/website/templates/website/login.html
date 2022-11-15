@@ -1,0 +1,77 @@
+{% extends 'website/base.html'%}
+{% load static%}
+
+{% block content %}
+
+  <title>Sign in</title>
+</head>
+
+<body>
+  <div class="login-root">
+  
+        
+      <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+        <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+          <h1><a href="{% url 'login'%}" rel="dofollow">Welcome Back</a></h1>
+        </div>
+        <div class="formbg-outer">
+          <div class="formbg">
+            <div class="formbg-inner padding-horizontal--48">
+              <span class="padding-bottom--15">Sign in to your account</span>
+              <form id="stripe-login" method="POST" action="">
+                {% csrf_token %}
+
+                
+                <div class="field padding-bottom--24">                 
+					<label for="username">Username Or Company name</label>
+					<input type="text" name="username">
+                </div>
+				
+
+                <div class="field padding-bottom--24">
+                  <div class="grid--50-50">
+                    <label for="password">Password</label>
+					<input type="password" name="password">
+					
+						</div> 
+
+                    
+                  </div>
+                 
+
+             
+                <div class="field padding-bottom--24">
+                  <input type="submit" name="submit" value="Continue">
+                 
+                </div>
+       
+              </form>
+              {% if messages %}
+              {% for message in messages %}
+                <p id="messages">{{ message }}</p>
+              {% endfor %}
+                    {% endif %}
+                
+      
+              {{form.errors}}
+              
+            </div>
+          </div>
+
+          <div class="footer-link padding-top--24">
+            <span>Don't have an account? <a href="{% url 'register'%}">Sign up</a></span>
+            <div class="listing padding-top--24 padding-bottom--24 flex-flex center-center">
+
+			</div>
+
+			{% include 'website/footer.html'%}
+
+		</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</body>
+
+{% endblock%}

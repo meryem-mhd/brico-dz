@@ -1,0 +1,23 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+
+{% block title %}
+   
+{% endblock %}
+
+{% block content%}
+
+<br/>
+<br/>
+<h1 class="centered">Update Your offer  </h1>
+<form class="form form-container" method="POST" style='padding:20px'>
+
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-primary">Post</button>
+</form>
+{% include 'website/footer.html'%}
+
+{% endblock %}
+

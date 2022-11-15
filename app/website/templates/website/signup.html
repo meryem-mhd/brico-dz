@@ -1,0 +1,102 @@
+{% extends 'website/base.html'%}
+{% load static%}
+
+{% block content %}
+
+  <title>Sign Up</title>
+
+</head>
+
+
+  <div class="login-root">
+    
+      <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+        <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+          <h1><a href="{% url 'register'%}" rel="dofollow">Let's Get Started</a></h1>
+        </div>
+        <div class="formbg-outer">
+          <div class="formbg">
+            <div class="formbg-inner padding-horizontal--48">
+              <span class="padding-bottom--15">Register An Account</span>
+              <form id="stripe-login" method="POST" action="">
+
+				{% csrf_token %}
+                <div class="field padding-bottom--24">
+					<label for="username">Username Or Company name</label>
+
+					{{form.username}}
+                  
+                </div>
+
+				<div class="field padding-bottom--24">
+					<label for="email">Email Adress</label>
+					
+					{{form.email}}
+				  </div>
+
+                <div class="field padding-bottom--24">
+                  <div class="grid--50-50">
+                    <label for="password">Password</label>
+					{{form.password1}}
+          
+					
+				
+					<label for="password">Password Confirmation</label>
+					{{form.password2}}
+
+						  <div>
+							<label for="groups">{{form.groups.label}}</label>
+							<select id='select-groups' class="browser-default custom-select" name="groups">
+								{% for group in groups  %}    
+			
+								<option value="{{group.home}}">{{group.name}}</option>
+								{% endfor %}
+							</select>
+
+						</div>
+
+						<div class="reset-pass">
+							<a href="#">Forgot your password?</a>
+						  </div>
+						</div>
+					  </div>
+
+	  
+					 
+					  <div class="field padding-bottom--24">
+						<input type="submit" name="submit" value="Continue">
+					  </div>
+							
+						</div>  
+                
+              </form>
+              {% if messages %}
+				{% for message in messages %}
+					<p id="messages">{{ message }}</p>
+				{% endfor %}
+							{% endif %}
+					
+
+				{{form.errors}}
+            </div>
+          </div>
+
+		  
+          <div class="footer-link padding-top--24">
+            <span>You Alredy Signup <a href="{% url 'login'%}">Login</a></span>
+            <div class="listing padding-top--24 padding-bottom--24 flex-flex center-center">
+              
+
+ 
+			</div>
+			{% include 'website/footer.html'%}
+
+		</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+{% endblock%}

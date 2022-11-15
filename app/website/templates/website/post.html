@@ -1,0 +1,29 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+
+{% block title %}
+    Post a Job
+{% endblock %}
+
+{% block content%}
+
+    <br/>
+    <br/>
+    <h1 class="centered">Post a Job</h1>
+    <form class="form form-container" method="POST" style='padding:20px'>
+
+        {% csrf_token %}
+     
+            {{form.as_p}}     
+        <button class="btn btn-primary">Post</button>
+
+        </form>
+
+{% include 'website/footer.html'%}
+
+
+{% endblock %}
+
+
+

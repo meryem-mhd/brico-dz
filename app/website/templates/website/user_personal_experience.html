@@ -1,0 +1,122 @@
+{% extends 'website/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+  <style>
+      .image-thumbail {
+          height: 200px;
+          object-fit: cover;
+      }
+
+      .list-group-item a {
+          text-decoration: none;
+          color: black;
+      }
+  </style>
+<br>
+<br>
+
+<div class="media centered">
+   
+    <div class="card h-100" style="width: 80vw;">
+
+        <div class="card-body">
+
+          <div class="account-settings">
+
+            <div class="user-profile">
+
+    <div class="user-avatar">
+
+        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" >
+    </div>  
+      
+  <div class="media-body" style="padding-right: 25px;
+  padding-left: 25px;">
+    {% comment %} {% if user_group %} : <b style="color: #00b2df;"> {{user_group}}</b> {% endif%} {% endcomment %}
+    <h2 class="account-heading">{{user_personal_experience.user.username}}</h2>
+      <br><br><br><br><br>
+      <h5>About</h5>
+          <p> Hello I'm {{user_personal_experience.user.username}} </p>
+        
+
+
+       <div class="profile__info">
+        <p>My e-mail : {{user_personal_experience.user.email}}
+        </p>
+        <p>        
+
+            <label for="main_job"> My Job :  {{user_personal_experience.main_job}}</label>
+            
+        <br>
+
+        <label for="Competence">Competence : 
+            
+          {% for competence in user_personal_experience.competence.all%} 
+          <br>
+          - {{competence.name}}
+          
+          {%endfor%}
+
+        </label>
+          
+        <br>
+
+        <label for="description">Description : {{user_personal_experience.description}}  </label>
+        <br>
+
+        <label for="experience">Experience : {{user_personal_experience.experience}}  </label> <br>
+        
+      </div>
+
+      <label for="email"><p><span>  Contact me in my E-mail addres:</span> </p>
+               
+        <a href="https://gmail.com"> {{user_personal_experience.user.email}}</a></B>
+    
+        <br><br><br>
+        <a href="{% url 'category' %}" class="btn btn-dark my-3">Go Back</a>
+        
+    </div>
+</div>
+</div>
+
+
+  
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+  <style
+    .image-thumbail {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .list-group-item a {
+        text-decoration: none;
+        color: black;
+    }>
+  </style>
+
+
+
+
+        
+        
+      </div>
+    </div>     
+      </div>
+      {% include 'website/footer.html'%}
+     
+{% endblock content %}

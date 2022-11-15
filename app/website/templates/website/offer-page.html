@@ -1,0 +1,88 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="form-container ">
+
+        
+    <span class=" myborder ">
+        <span class="  ">
+    
+        <div class="d-flex justify-content-center">
+            <div class="offre">
+
+                <br />
+
+                <br />
+
+                <div class="centered">
+
+                     <h3>Offer details</h3>  
+
+               </div>  
+
+                 <br>
+
+               <br> 
+    <B>
+       
+
+               <label for="Job"><p><span>Searching for: </span>  {{posts}}</p></label>
+
+               
+            
+               
+               
+                   <label for="description"><p><span> Description: </span> {{posts.description}}</p> </label>
+               
+                  
+               
+                   <br>
+               
+                   <label for="min_salary"><p><span> Min Salary: </span> {{posts.min_salary}} DA</p>
+               
+                   <label for="max_salary"><p><span> Max Salary:</span>  {{posts.max_salary}} DA</p>
+               
+               
+               
+                   <br>
+               
+                   <label for="location"><p><span> Location: </span> {{posts.location}}</p>
+               
+                   <label for="email"><p><span> If you're qualified contact us in our E-mail addres:</span> </p>
+               
+                   <a href="https://gmail.com"> {{posts.adress}}</a></B>
+                   
+               
+                   <br><br><br>
+    <div class="centered">
+    <br>
+<a href="{% url 'home-user' %} " class="btn btn-secondary">Back Home </a>
+
+</div>
+
+
+                
+
+</div> 
+
+
+
+</div> 
+
+<br />
+
+</span>
+
+<br />    <br /><br />
+
+</div>
+
+
+
+       
+      
+
+{% include 'website/footer.html'%}
+
+{% endblock %}

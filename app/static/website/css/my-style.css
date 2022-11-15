@@ -1,0 +1,146 @@
+
+
+.form-container {
+
+    display: flex;
+  
+    justify-content: center;
+  
+    align-items: center;
+  
+    flex-direction: column;
+  
+    width: 100%;
+  
+    background-color: #f5f6fa;
+  
+  }
+  
+  
+  
+  .myborder {
+  
+    display: flex;
+  
+    justify-content: center;
+  
+    align-items: center;
+  
+    flex-direction: column;
+  
+    width: 80%;
+  
+  
+  
+    background-color: white;
+  
+    padding: 10px;
+  
+  
+  
+    margin-top: 40px;
+  
+  
+  
+    border-width: thick;
+  
+    border-color: #000;
+  
+    border-radius: 20px;
+  
+
+  
+    padding: 10px;
+  
+  }
+  
+  
+  
+  .form-container input {
+  
+    border-width: 1px;
+  
+    border-color: #ccc;
+  
+    border-radius: 6px;
+  
+    width: 400px;
+  
+    padding: 5px;
+  
+  }
+  
+  
+  
+  .centered {
+  
+    width: 100%;
+  
+    display: flex;
+  
+    justify-content: center;
+  
+    align-items: center;
+  
+  }
+  
+  
+  
+  .form-container textarea {
+  
+    border-width: 1px;
+  
+    border-color: #ccc;
+  
+    border-radius: 6px;
+  
+    width: 400px;
+  
+    padding: 5px;
+  
+  }
+
+  
+  .offre span {
+  
+    color: #222;
+  
+    font-size: larger;
+  
+    margin-right: 14px;
+  
+    font-weight: 700;
+  
+  }
+  
+  .offre p {
+  
+    color: #666;
+  
+    font-size: medium;
+  
+    display: flex;
+  
+    padding-top: 10px;
+  
+    padding-bottom: 10px;
+  
+    max-width: 500px;
+  
+    font-weight: 300;
+  
+  }
+  
+  
+.profile-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 20px;
+  background-color: #222;
+}
+
+.profile-pic image{
+  width: 20px;
+  height: 20px;
+}

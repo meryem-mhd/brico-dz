@@ -1,0 +1,146 @@
+
+{% extends 'website/base.html' %}
+{% load static %} 
+{% block content %}
+
+
+
+<!-- Header Start -->
+
+<div class="container-xxl py-5 bg-dark page-header mb-5 ">
+
+  <div class="container my-5 pt-5 pb-4">
+
+    <h1 class="display-3 text-white mb-3 animated slideInDown">About Us</h1>
+
+  </div>
+
+</div>
+
+<!-- Header End -->
+
+
+<!-- About Start -->
+
+<div class="container-xxl py-5">
+
+  <div class="container">
+
+    <div class="row g-5 align-items-center">
+
+      <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+
+        <div class="row g-0 about-bg rounded overflow-hidden">
+
+          <div class="col-6 text-start">
+
+            <img
+
+              class="img-fluid"
+
+              style="width: 100%; height: 100%"
+
+              src="{% static 'website/img/iii.jpg'%}"
+
+            />
+
+          </div>
+
+          <div class="col-6 text-start">
+
+            <img
+
+              class="img-fluid"
+
+              style="width: 100%; height: 100%"
+
+              src="{% static 'website/img/about-1.jpeg'%}"
+
+            />
+
+          </div>
+
+          <div class="col-6 text-end">
+
+            <img
+
+              class="img-fluid"
+
+              style="width: 100%; height: 100%"
+
+              src="{% static 'website/img/about-3.jpeg'%} "
+
+            />
+
+          </div>
+
+          <div class="col-6 text-end">
+
+            <img
+
+              class="img-fluid"
+
+              style="width: 100%; height: 100%"
+
+              src="data:image/jpeg;base64,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"
+
+            />
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+
+        <h1 class="mb-4">
+
+          BricoDz Help To Get The Best Job
+
+          <br />
+
+          And Find Good Employees
+
+        </h1>
+
+        <p class="mb-4"></p>
+
+        <p>
+
+          <i class="fa fa-check text-primary me-3"></i>Consolidate all offers in
+
+          one place.
+
+        </p>
+
+        <p>
+
+          <i class="fa fa-check text-primary me-3"></i>Optimize and centralize
+
+          your job offers on your recruitment page.
+
+        </p>
+
+        <p>
+
+          <i class="fa fa-check text-primary me-3"></i>Promotes your corporate
+
+          culture
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+{% include 'website/footer.html'%}
+
+<!-- About End -->
+
+{% endblock%}
+
